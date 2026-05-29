@@ -1,0 +1,4 @@
+# All text files: LF for cross-platform stability
+*.md text eol=lf
+*.json text eol=lf
+*.sh text eol=lf

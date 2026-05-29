@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="ui-monospace, 'JetBrains Mono', 'Consolas', monospace" font-size="13">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1b26"/>
+      <stop offset="1" stop-color="#16161e"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7aa2f7"/>
+    </marker>
+    <marker id="arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f7768e"/>
+    </marker>
+    <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ece6a"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="460" rx="12" fill="url(#bg)"/>
+
+  <text x="450" y="40" text-anchor="middle" fill="#c0caf5" font-size="18" font-weight="bold">self-audit loop pattern</text>
+  <text x="450" y="62" text-anchor="middle" fill="#565f89" font-size="12">/check · /flow · /guarantee · /more · /retry · /strengthen — 6 commands, same shape</text>
+
+  <text x="80" y="120" fill="#7aa2f7" font-size="13" font-weight="bold">round N</text>
+  <text x="80" y="140" fill="#bb9af7" font-size="22" font-weight="bold">
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.32;0.33;1" dur="9s" repeatCount="indefinite"/>
+      1
+    </tspan>
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.33;0.34;0.65;0.66;1" dur="9s" repeatCount="indefinite"/>
+      2
+    </tspan>
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.67;1" dur="9s" repeatCount="indefinite"/>
+      3
+    </tspan>
+  </text>
+
+  <rect x="180" y="100" width="200" height="80" rx="10" fill="#24283b" stroke="#7aa2f7" stroke-width="2"/>
+  <text x="280" y="130" text-anchor="middle" fill="#7aa2f7" font-weight="bold">agent A</text>
+  <text x="280" y="152" text-anchor="middle" fill="#c0caf5" font-size="11">재검토 전문</text>
+  <text x="280" y="170" text-anchor="middle" fill="#565f89" font-size="11">finds gaps · no scoring</text>
+
+  <line x1="380" y1="140" x2="500" y2="140" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="440" y="130" text-anchor="middle" fill="#565f89" font-size="11">report.md</text>
+
+  <rect x="500" y="100" width="200" height="80" rx="10" fill="#24283b" stroke="#bb9af7" stroke-width="2"/>
+  <text x="600" y="130" text-anchor="middle" fill="#bb9af7" font-weight="bold">agent B</text>
+  <text x="600" y="152" text-anchor="middle" fill="#c0caf5" font-size="11">판정 전문</text>
+  <text x="600" y="170" text-anchor="middle" fill="#565f89" font-size="11">scores · decides next</text>
+
+  <polygon points="730,140 800,100 870,140 800,180" fill="#24283b" stroke="#e0af68" stroke-width="2"/>
+  <text x="800" y="135" text-anchor="middle" fill="#e0af68" font-weight="bold" font-size="11">findings</text>
+  <text x="800" y="153" text-anchor="middle" fill="#e0af68" font-weight="bold" font-size="14">== 0 ?</text>
+  <line x1="700" y1="140" x2="730" y2="140" stroke="#bb9af7" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <text x="80" y="290" fill="#f7768e" font-size="12" font-weight="bold" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.30;0.66;0.67;1" dur="9s" repeatCount="indefinite"/>
+    NO — patch found
+  </text>
+  <text x="80" y="312" fill="#c0caf5" font-size="11" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.30;0.66;0.67;1" dur="9s" repeatCount="indefinite"/>
+    increment round
+  </text>
+  <text x="80" y="328" fill="#c0caf5" font-size="11" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.30;0.66;0.67;1" dur="9s" repeatCount="indefinite"/>
+    spawn fresh A
+  </text>
+  <path d="M 800 180 Q 800 280 80 280 Q 50 280 50 140 Q 50 110 80 110" fill="none" stroke="#f7768e" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-r)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.30;0.66;0.67;1" dur="9s" repeatCount="indefinite"/>
+  </path>
+
+  <text x="820" y="290" text-anchor="end" fill="#9ece6a" font-size="12" font-weight="bold" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.78;1" dur="9s" repeatCount="indefinite"/>
+    YES — cycle closes
+  </text>
+  <text x="820" y="312" text-anchor="end" fill="#c0caf5" font-size="11" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.78;1" dur="9s" repeatCount="indefinite"/>
+    return final report
+  </text>
+  <line x1="800" y1="180" x2="800" y2="270" stroke="#9ece6a" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-g)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.78;1" dur="9s" repeatCount="indefinite"/>
+  </line>
+
+  <rect x="180" y="370" width="640" height="60" rx="8" fill="#16161e" stroke="#414868"/>
+  <text x="200" y="392" fill="#7dcfff" font-size="12" font-weight="bold">termination invariant</text>
+  <text x="200" y="412" fill="#c0caf5" font-size="11">100점 + 0건 발견까지 회차 반복.</text>
+  <text x="400" y="412" fill="#bb9af7" font-size="11">"agent A ≠ agent B"</text>
+  <text x="540" y="412" fill="#565f89" font-size="11">— same agent cannot evaluate itself.</text>
+
+  <text x="450" y="450" text-anchor="middle" fill="#565f89" font-size="11" font-style="italic">
+    this exact pattern is what powered the 9-round audit behind harness107
+  </text>
+</svg>
